@@ -8,7 +8,15 @@
 	"main": "src/index.ts",
 	"compatibility_date": "2026-07-02",
 	"compatibility_flags": ["nodejs_compat"],
-	"observability": {
-		"enabled": true,
+	"durable_objects": {
+		"bindings": [
+			{ "class_name": "MyMCP", "name": "MCP_OBJECT" }
+		]
 	},
+	"migrations": [
+		{ "tag": "v1", "new_sqlite_classes": ["MyMCP"] }
+	],
+	"observability": {
+		"enabled": true
+	}
 }
